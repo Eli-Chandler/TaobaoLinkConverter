@@ -64,7 +64,7 @@ async def get_url(url):
         elif parsed_url == 'PANDABUY':
             qs = parse_qs(url.query)
             if 'url' in qs:
-                return get_url(urllib.parse.unquote(qs['url'][0]))
+                return await get_url(urllib.parse.unquote(qs['url'][0]))
     return None
 
 async def main():
